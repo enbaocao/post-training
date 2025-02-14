@@ -8,17 +8,17 @@
 - **Evaluation Metric:** BLEU Score (via `sacrebleu`)
 
 ## Methodology
-### 1️Dataset Preparation
+### Dataset Preparation
 - Loaded the **ELRC-Medical-V2** dataset.
 - Split into **80% training / 20% test**.
 - Tokenized English-French sentence pairs.
 
-### 2️Pretrained Model Setup
+### Pretrained Model Setup
 - Loaded **Helsinki-NLP/opus-mt-en-fr**.
 - Tokenized inputs and outputs.
 - Used `DataCollatorForSeq2Seq` to batch process data.
 
-### 3️Fine-Tuning
+### 3Fine-Tuning
 - Used **Seq2SeqTrainer** with:
   - **Learning rate:** `2e-5`
   - **Batch size:** `16`
@@ -26,7 +26,7 @@
   - **Weight decay:** `0.01`
 - Fine-tuned on the dataset.
 
-### 4️Evaluation
+### Evaluation
 - Computed BLEU scores for:
   - **Pretrained model**
   - **Fine-tuned model**
