@@ -33,14 +33,14 @@
 - Compared translations of sample sentences.
 
 ## Results
-### Training Performance
-| Epoch | Training Loss | Validation Loss | BLEU Score |
-|-------|--------------|----------------|------------|
-| 1     | 0.636       | 0.551          | 57.84      |
-| 2     | 0.538       | 0.539          | 58.44      |
-| 3     | 0.496       | 0.537          | 58.53      |
+| Epoch | Training Loss | Validation Loss | BLEU     | METEOR   | BERTScore F1 |
+|:-----:|:------------:|:---------------:|:--------:|:--------:|:------------:|
+|   0   | N/A          | N/A             | 32.999   | 0.527    | 0.824        |
+|   1   | 0.635400     | 0.549073        | 36.972185| 0.638258 | 0.864561     |
+|   2   | 0.531700     | 0.535434        | 40.855252| 0.641706 | 0.866834     |
+|   3   | 0.475200     | 0.545693        | 45.469537| 0.668619 | 0.878935     |
+|   4   | 0.385800     | 0.535864        | 49.738398| 0.651694 | 0.870610     |
 
-- BLEU score **improved slightly** after fine-tuning.
 
 ### Example Comparisons
 | **English Input** | **Pretrained Model** | **Fine-Tuned Model** | **Reference Translation** |
