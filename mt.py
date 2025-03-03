@@ -1,5 +1,7 @@
 !pip install transformers datasets evaluate sacrebleu tf-keras ipywidgets sentencepiece sacremoses "accelerate>=0.26.0"
 
+!pip install nltk bert_score
+
 # import libraries
 import evaluate
 import numpy as np
@@ -10,6 +12,7 @@ from transformers import (AutoTokenizer, AutoModelForSeq2SeqLM,
 
 # load dataset
 dataset = load_dataset("qanastek/ELRC-Medical-V2", "en-fr")
+
 # Create a proper train/test split to avoid contamination
 ds = dataset["train"].train_test_split(test_size=0.2, seed=42) if "train" in dataset else dataset.train_test_split(test_size=0.2, seed=42)
 
@@ -27,7 +30,6 @@ def tokenize_fn(examples):
         labels = tokenizer(fr_texts, max_length=128, truncation=True)
     model_inputs["labels"] = labels["input_ids"]
     return model_inputs
-
 tokenized_ds = ds.map(tokenize_fn, batched=True)
 
 # data collator
@@ -136,4 +138,3 @@ for i, example in enumerate(sample_original):
     print("base prediction:", base_decoded_preds[i])
     print("reference    :", ref_text)
     print("-" * 50)
-
