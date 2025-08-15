@@ -1,5 +1,5 @@
 ## purpose
-- fine‑tune an off‑the‑shelf en→fr mt model on medical‑domain data.
+- fine‑tune an off‑the‑shelf English to French machine translation (mt) model on medical‑domain data.
 - goal: beat the base model on automatic metrics and produce cleaner, more domain‑appropriate phrasing.
 
 ## results (benchmarks)
@@ -8,9 +8,9 @@
 - bertscore f1: 0.824 → 0.871 (+0.047)
 
 what this means
-- stronger lexical choices for medical/legal phrasing; fewer literal errors.
-- base sometimes picks incorrect words (e.g., "dépassés"); sft corrects to domain terms ("apurés").
-- remaining issues: occasional odd acronyms and rare truncations; mitigations include length‑penalty tuning, more in‑domain data, and longer training.
+- stronger lexical choices for medical phrases. fewer literal errors.
+- base sometimes picks incorrect words (e.g., "dépassés"); SFT corrects to domain terms ("apurés").
+- remaining issues: occasional odd acronyms and rare truncations; fixes include a lenght penalty, more domain-specific data, and more training.
 
 ## examples (base vs sft vs reference)
 
